@@ -1,5 +1,52 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  h1 XXXX API Documentation
+
+  h2 Introduction
+  p The following document describes the available public methods of the XXXX API.
+  p To make requests to this API, you will need a token (below) which identifies your application, and is included in each request you make.
+  label API Token: 
+  input(value='code_1846')
+  
+  h2 API Methods
+  p Loading the data for the View Profile page
+    
+    pre
+      code
+        | request: GET /profile?token=XXXX
+        | 
+        | response: JSON format
+        | {
+        |    photo: string,
+        |    name: string,
+        |    summary: string,
+        |    email: string,
+        |    phone: string,
+        |    linkedin: string,
+        |    website: string,
+        |    resume: string
+        | }
+
+    p Saving data from the Edit Profile page
+      
+      pre
+        code
+          | request: POST /profile post data below
+          |   {
+          |     token: string
+          |     photo: string,
+          |     name: string,
+          |     bio: string,
+          |     email: string,
+          |     phone: string,
+          |     linkedin: string,
+          |     website: string,
+          |     resume: string
+          |   }      
+          | 
+          | response: (JSON format)
+          |   {
+          |     success: boolean
+          |   }
+
